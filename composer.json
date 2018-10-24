@@ -1,0 +1,24 @@
+{
+  "name": "nimaebrazi/laravel-validator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nima Ebrazi",
+      "email": "nima.ebrazi1373@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "nimaebrazi\\Validator" : "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "nimaebrazi\\Validator\\LaravelValidatorServiceProvider"
+      ]
+    }
+  }
+}
