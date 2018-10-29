@@ -2,7 +2,9 @@
 
 namespace nimaebrazi\LaravelValidator;
 
-class LaravelValidatorServiceProvider
+use Illuminate\Support\ServiceProvider;
+
+class LaravelValidatorServiceProvider extends ServiceProvider
 {
     /**
      * Register bindings in the container.

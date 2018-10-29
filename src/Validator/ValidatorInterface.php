@@ -2,6 +2,8 @@
 
 namespace nimaebrazi\LaravelValidator\Validator;
 
+use Illuminate\Support\MessageBag;
+
 interface ValidatorInterface
 {
     /**
@@ -20,7 +22,7 @@ interface ValidatorInterface
      * @param array $customAttributes
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public function validate(array $data, array $rules = [], array $messages = [], array $customAttributes = []);
+    public function make(array $data, array $rules = [], array $messages = [], array $customAttributes = []);
 
     /**
      * Determine if the data fails the validation rules.
@@ -39,9 +41,9 @@ interface ValidatorInterface
     /**
      * Get all of the validation error messages.
      *
-     * @return array
+     * @return MessageBag
      */
-    public function errors(): array;
+    public function errors(): MessageBag;
 
     /**
      * Get all of the validation messages.
@@ -49,5 +51,10 @@ interface ValidatorInterface
      * @return array
      */
     public function messages(): array;
+
+    /**
+     * @return array
+     */
+    public function customAttributes(): array;
 
 }
