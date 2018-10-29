@@ -65,8 +65,40 @@ class UpdateUserProfile extends AbstractValidator
             'name' => 'required|min:3',
         ];
     }
+    
+    // OPTIONAL
+    /**
+     * Messages of rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    // OPTIONAL
+    /**
+     * Custom attributes of rules.
+     *
+     * @return array
+     */
+    public function customAttributes(): array
+    {
+        return [
+            //
+        ];
+    }
 }
 ```
+
+#### For more about:
+
+[Custom Error Messages](https://laravel.com/docs/5.7/validation#custom-error-messages)
+
+[Custom Attributes](https://gilbitron.me/blog/laravel-custom-validation-attributes)
 
 Step 2:
 Inject class to a controller:
@@ -76,7 +108,7 @@ class ApiUserController extends Controller
 {
     /**
      * @param Request $request
-     * @param TestValidator $validator
+     * @param UpdateUserProfile $validator
      * @throws \Exception
      * @throws \nimaebrazi\LaravelValidator\src\Validator\ValidationException
      */
@@ -84,7 +116,7 @@ class ApiUserController extends Controller
     {
         $result = $validator->make($request->all())->validate();
 
-        dd($result); // true when passed
+        dd($result); // true, when passed
     }
 ```
 
@@ -95,7 +127,7 @@ class ApiUserController extends Controller
 {
     /**
      * @param Request $request
-     * @param TestValidator $validator
+     * @param UpdateUserProfile $validator
      * @throws \Exception
      * @throws \nimaebrazi\LaravelValidator\src\Validator\ValidationException
      */
