@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\MessageBag;
-use nimaebrazi\LaravelValidator\src\Validator\ValidationException;
+use nimaebrazi\LaravelValidator\Validator\ValidationException;
 
 abstract class AbstractValidator implements ValidatorInterface
 {
