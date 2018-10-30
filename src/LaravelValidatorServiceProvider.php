@@ -1,6 +1,6 @@
 <?php
 
-namespace nimaebrazi\LaravelValidatitor;
+namespace nimaebrazi\LaravelValidator;
 
 use Illuminate\Support\ServiceProvider;
 
