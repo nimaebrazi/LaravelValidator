@@ -23,5 +23,8 @@ class LaravelValidatorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/config/laravel_validator.php' => config_path('laravel_validator.php'),
+        ]);
     }
 }

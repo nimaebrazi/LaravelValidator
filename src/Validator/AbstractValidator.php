@@ -8,14 +8,9 @@ use Exception;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\MessageBag;
-use nimaebrazi\LaravelValidator\Validator\ValidationException;
 
 abstract class AbstractValidator implements ValidatorInterface
 {
-    const MessageKey = 'messages.validation_failed';
-
-    const HttpStatusCode = 422;
-
     /**
      * @var ValidationFactory
      */
@@ -138,8 +133,8 @@ abstract class AbstractValidator implements ValidatorInterface
         }
 
         throw new ValidationException(
-            trans(self::MessageKey),
-            self::HttpStatusCode,
+            trans(config('laravel_validator.message_path')),
+            config('laravel_validator.HttpStatusCode'),
             $this->validator->errors()->messages()
         );
 

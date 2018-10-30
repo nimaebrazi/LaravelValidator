@@ -53,8 +53,18 @@ interface ValidatorInterface
     public function messages(): array;
 
     /**
+     * Custom attributes of rules.
+     *
      * @return array
      */
     public function customAttributes(): array;
+
+    /**
+     * Validate data.
+     *
+     * @return bool
+     * @throws ValidationException
+     */
+    public function validate();
 
 }
