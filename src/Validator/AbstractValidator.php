@@ -20,6 +20,12 @@ abstract class AbstractValidator implements ValidatorInterface
     private $validator;
 
     /**
+     * @var RuleManager|null
+     */
+    protected $ruleManager = null;
+
+
+    /**
      * AbstractValidator constructor.
      * @param ValidationFactory $validationFactory
      */
@@ -138,5 +144,14 @@ abstract class AbstractValidator implements ValidatorInterface
             $this->validator->errors()->messages()
         );
 
+    }
+
+    protected function ruleManager()
+    {
+        if (is_null($this->ruleManager)) {
+            $this->ruleManager = new RuleManager();
+        }
+        $this->ruleManager->resetRules();
+        return $this->ruleManager;
     }
 }
