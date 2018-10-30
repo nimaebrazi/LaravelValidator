@@ -49,6 +49,8 @@ Create a validation class:
 
 <code>\nimaebrazi\LaravelValidator\Validator\AbstractValidator</code>
 
+message() & customAttributes() methods are optional.
+
 ```php
 use nimaebrazi\LaravelValidator\Validator\AbstractValidator;
 
