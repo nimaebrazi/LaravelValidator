@@ -1,7 +1,7 @@
 <?php
 
 
-namespace nimaebrazi\LaravelValidator\src\Validator;
+namespace nimaebrazi\LaravelValidator\Validator;
 
 
 class RuleManager
