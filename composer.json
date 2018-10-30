@@ -11,13 +11,13 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "nimaebrazi\\Validator\\" : "src/"
+      "nimaebrazi\\LaravelValidator\\" : "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "nimaebrazi\\Validator\\LaravelValidatorServiceProvider"
+        "nimaebrazi\\LaravelValidator\\LaravelValidatorServiceProvider"
       ]
     }
   }
