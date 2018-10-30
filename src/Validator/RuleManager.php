@@ -676,6 +676,10 @@ class RuleManager
         return $ruleString;
     }
 
+    /**
+     * Set new collection for rules property.
+     *
+     */
     public function resetRules()
     {
         $this->rules = collect();

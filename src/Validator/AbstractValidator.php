@@ -146,6 +146,11 @@ abstract class AbstractValidator implements ValidatorInterface
 
     }
 
+    /**
+     * Reset old object of rules collection or set new RuleManager.
+     *
+     * @return RuleManager|null
+     */
     protected function ruleManager()
     {
         if (is_null($this->ruleManager)) {
