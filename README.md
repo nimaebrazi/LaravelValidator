@@ -1,4 +1,4 @@
-# LaravelValidator
+# Laravel Validator
 
 ### Instalation
 ```sh
