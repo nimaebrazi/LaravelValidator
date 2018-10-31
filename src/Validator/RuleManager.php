@@ -106,7 +106,7 @@ class RuleManager
      */
     public function array()
     {
-        $this->add('bail');
+        $this->add('array');
         return $this;
     }
 
