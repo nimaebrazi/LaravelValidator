@@ -65,7 +65,10 @@ Create a validation class:
 
 <code>\nimaebrazi\LaravelValidator\Validator\AbstractValidator</code>
 
-<code>message()</code> & <code>customAttributes()</code> methods are optional.
+<code>public function messages(): array</code>
+& 
+<code>public function customAttributes(): array</code> 
+methods are optional.
 
 ```php
 use nimaebrazi\LaravelValidator\Validator\AbstractValidator;
