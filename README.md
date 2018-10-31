@@ -4,13 +4,6 @@
 ```sh
 composer require nimaebrazi/laravel-validator
 ```
-Add this key in <code>messages.php</code> file:
-
-<code>resources/lang/YOUR_LANGUAGE/messages.php</code>
-
-```php
-"validation_failed" => "YOUR_MESSAGE_WHEN_VALIDATION_FAILED"
-```
 
 If using laravel <code>5.4.*</code> and older version you nedd add service provider in <code>config/app.php</code>
 
@@ -23,6 +16,19 @@ If using laravel <code>5.4.*</code> and older version you nedd add service provi
 ```
 
 This package throws an exception named <code>ValidationException</code>. For handling Laravel Exception, add below code in <code>Handler.php</code> file and custumize it for your project.
+
+
+Publish config:
+```php
+php artisan vendor:publish
+```
+You can change message path file in config: <code>laravel_validator.php</code>
+
+Add this key in <code>messages.php</code> file:
+<code>resources/lang/YOUR_LANGUAGE/messages.php</code>
+```php
+"validation_failed" => "messages.validation_failed"
+```
 
 ```php
 use nimaebrazi\LaravelValidator\src\Validator\ValidationException;
