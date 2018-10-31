@@ -12,7 +12,17 @@ Add this key in <code>messages.php</code> file:
 "validation_failed" => "YOUR_MESSAGE_WHEN_VALIDATION_FAILED"
 ```
 
-This package throws an exception named ValidationException. For handling Laravel Exception, add below code in <code>Handler.php</code> file and custumize it for your project.
+If using laravel <code>5.4.*</code> and older version you nedd add service provider in <code>config/app.php</code>
+
+```php
+'providers' => [
+    ...
+    \nimaebrazi\LaravelValidator\LaravelValidatorServiceProvider::class,
+    ...
+]
+```
+
+This package throws an exception named <code>ValidationException</code>. For handling Laravel Exception, add below code in <code>Handler.php</code> file and custumize it for your project.
 
 ```php
 use nimaebrazi\LaravelValidator\src\Validator\ValidationException;
@@ -146,4 +156,30 @@ class ApiUserController extends Controller
            // your codes
         }
     }
+```
+
+### RuleManager Helper
+
+Are you see document when use validator rules? I think it is so hard, when forget a rule and parameters.
+You can use RuleManager of this package.
+
+
+```php
+use nimaebrazi\LaravelValidator\Validator\AbstractValidator;
+
+class UpdateUserProfile extends AbstractValidator
+{
+    /**
+     * Rules of validation.
+     *
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [
+            'name'  => $this->ruleManager()->required()->min('3')->make(),
+            'age'   => $this->ruleManager()->required()->numeric()->max('3')->min('0')->make(),
+            'other' => $this->ruleManager()->required()->string()->make()        ];
+    }
+}
 ```
