@@ -132,9 +132,7 @@ class ApiUserController extends Controller
      */
     public function update(Request $request, UpdateUserProfile $validator)
     {
-        $result = $validator->make($request->all())->validate();
-
-        dd($result); // true, when passed
+        $validator->make($request->all())->validate();
     }
 ```
 
