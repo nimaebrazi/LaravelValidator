@@ -15,9 +15,6 @@ If using laravel <code>5.4.*</code> and older version you nedd add service provi
 ]
 ```
 
-This package throws an exception named <code>ValidationException</code>. For handling Laravel Exception, add below code in <code>Handler.php</code> file and custumize it for your project.
-
-
 Publish config:
 ```php
 php artisan vendor:publish
@@ -30,6 +27,7 @@ Add this key in <code>messages.php</code> file:
 "validation_failed" => "messages.validation_failed"
 ```
 
+This package throws an exception named <code>ValidationException</code>. For handling Laravel Exception, add below code in <code>Handler.php</code> file and custumize it for your project.
 ```php
 use nimaebrazi\LaravelValidator\src\Validator\ValidationException;
 ...
