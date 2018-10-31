@@ -179,7 +179,8 @@ class UpdateUserProfile extends AbstractValidator
         return [
             'name'  => $this->ruleManager()->required()->min('3')->make(),
             'age'   => $this->ruleManager()->required()->numeric()->max('3')->min('0')->make(),
-            'other' => $this->ruleManager()->required()->string()->make()        ];
+            'other' => $this->ruleManager()->required()->string()->make()        
+        ];
     }
 }
 ```
