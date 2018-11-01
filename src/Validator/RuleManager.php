@@ -668,6 +668,10 @@ class RuleManager
      */
     public function make(): string
     {
+        if ($this->rules->isEmpty()) {
+            return '';
+        }
+
         $ruleString = '';
         foreach ($this->rules as $rule) {
             $ruleString .= $rule . self::PipeSeparator;
