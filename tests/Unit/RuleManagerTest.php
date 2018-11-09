@@ -3,11 +3,11 @@
 
 namespace nimaebrazi\LaravelValidator\Test\Unit;
 
+use nimaebrazi\LaravelValidator\Test\TestCase;
 use nimaebrazi\LaravelValidator\Validator\RuleManager;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 
-class RuleManagerTest extends OrchestraTestCase
+class RuleManagerTest extends TestCase
 {
     /** @test */
     public function it_make_single_validation_rule_string_without_pipe()
