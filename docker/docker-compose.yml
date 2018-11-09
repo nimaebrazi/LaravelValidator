@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+  # Application service
+  app:
+    build:
+      context: ./php-fpm
+    working_dir: /var/www
+    volumes:
+      - ../:/var/www
+
+  # Web service
+  web:
+    build:
+      context: ./nginx
+    working_dir: /var/www
+    volumes_from:
+      - app
+    ports:
+      - 8080:80
